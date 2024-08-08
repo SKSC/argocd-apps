@@ -1,0 +1,4 @@
+helm install crossplane --namespace crossplane-system --create-namespace crossplane-stable/crossplane 
+
+
+kubectl create secret generic aws-secret -n crossplane-system --from-file=creds=./aws-credentials.txt

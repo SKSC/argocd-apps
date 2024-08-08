@@ -1,0 +1,7 @@
+provider:
+  # -- A list of Provider packages to install.
+  packages: [
+    "provider-http",
+    "provider-gcp",
+    "provider-aws",
+  ]
