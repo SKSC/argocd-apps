@@ -11,4 +11,4 @@ patches:
     version: v1alpha1
     kind: Application
     name: argocd
-  path: ./patch/application.yaml
+  path: patch/application.yaml
