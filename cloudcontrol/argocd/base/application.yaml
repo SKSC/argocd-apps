@@ -8,11 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/SKSC/argocd-install.git
-    targetRevision: feature/test
-    path: chart/argo-cd
-    helm:
-      valueFiles:
-        - ../../values/common.yaml
+    targetRevision: HEAD
 
   destination:
     server: https://kubernetes.default.svc
