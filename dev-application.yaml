@@ -9,16 +9,16 @@ spec:
       repoURL: https://github.com/SKSC/argocd-apps.git
       revision: test
       directories:
-        - path: cloudcontrol/argocd/base
+        - path: xxx
   template:
     metadata:
-      name: argocdcdc-{{name}}
+      name: xxx-{{name}}
     spec:
       project: default
       source:
         repoURL: https://github.com/SKSC/argocd-apps.git
         targetRevision: test
-        path: cloudcontrol/argocd/overlay/dev
+        path: xxx
       destination:
         server: https://kubernetes.default.svc
         namespace: argocd
