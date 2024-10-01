@@ -8,11 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/SKSC/crossplane-install.git
-    targetRevision: HEAD
-    path: chart
-    helm:
-      valueFiles:
-        - values.yaml
+    targetRevision: main
 
   destination:
     server: https://kubernetes.default.svc

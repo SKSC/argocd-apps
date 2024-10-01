@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/SKSC/argocd-install.git
-    targetRevision: feature/test
+    targetRevision: HEAD
 
   destination:
     server: https://kubernetes.default.svc
