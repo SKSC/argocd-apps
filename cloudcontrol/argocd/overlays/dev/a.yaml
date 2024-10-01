@@ -4,21 +4,17 @@ metadata:
   name: argocd
   namespace: argocd
 spec:
-  project: default
-
-  source:
-    repoURL: https://github.com/SKSC/argocd-install.git
-    targetRevision: feature/test
-
   destination:
-    server: https://kubernetes.default.svc
     namespace: argocd
-
-
-  
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: overlays/dev
+    repoURL: https://github.com/SKSC/argocd-install.git
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
