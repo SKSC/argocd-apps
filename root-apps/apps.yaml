@@ -6,6 +6,9 @@ metadata:
 spec:
   project: default
   sources:
+    # - repoURL: https://github.com/SKSC/argocd-apps.git
+    #   targetRevision: main
+    #   path: root-apps
     - repoURL: https://github.com/SKSC/argocd-apps.git
       targetRevision: main
       path: cloudcontrol/argocd/overlays/dev
@@ -17,9 +20,9 @@ spec:
       path: cloudcontrol/infra/
       directory:
         recurse: true
-    - repoURL: https://github.com/SKSC/argocd-apps.git
-      targetRevision: main
-      path: global/nginx/overlays/dev
+    # - repoURL: https://github.com/SKSC/argocd-apps.git
+    #   targetRevision: main
+    #   path: global/nginx/overlays/dev
     
   destination:
     server: https://kubernetes.default.svc
