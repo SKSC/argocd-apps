@@ -1,29 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cloudcontrol-apps
-  
+  name: apps
   namespace: argocd
 spec:
   project: default
-
   sources:
     - repoURL: https://github.com/SKSC/argocd-apps.git
-      targetRevision: test
+      targetRevision: main
       path: cloudcontrol/argocd/overlays/dev
     - repoURL: https://github.com/SKSC/argocd-apps.git
-      targetRevision: test
+      targetRevision: main
       path: cloudcontrol/crossplane/overlays/dev
+    # - repoURL: https://github.com/SKSC/argocd-apps.git
+    #   targetRevision: main
+    #   path: cloudcontrol/infra/
+    #   directory:
+    #     recurse: true
     - repoURL: https://github.com/SKSC/argocd-apps.git
-      targetRevision: test
-      path: cloudcontrol/infra/
-      directory:
-        recurse: true
-    - repoURL: https://github.com/SKSC/argocd-apps.git
-      targetRevision: test
-      path: global/cert-manager/overlays/dev
+      targetRevision: main
+      path: global/nginx/overlays/dev
     
-
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
