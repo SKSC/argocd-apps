@@ -12,11 +12,11 @@ spec:
     - repoURL: https://github.com/SKSC/argocd-apps.git
       targetRevision: main
       path: cloudcontrol/crossplane/overlays/dev
-    # - repoURL: https://github.com/SKSC/argocd-apps.git
-    #   targetRevision: main
-    #   path: cloudcontrol/infra/
-    #   directory:
-    #     recurse: true
+    - repoURL: https://github.com/SKSC/argocd-apps.git
+      targetRevision: main
+      path: cloudcontrol/infra/
+      directory:
+        recurse: true
     - repoURL: https://github.com/SKSC/argocd-apps.git
       targetRevision: main
       path: global/nginx/overlays/dev
