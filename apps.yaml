@@ -17,9 +17,9 @@ spec:
       path: cloudcontrol/infra/
       directory:
         recurse: true
-    - repoURL: https://github.com/SKSC/argocd-apps.git
-      targetRevision: main
-      path: global/nginx/overlays/dev
+    # - repoURL: https://github.com/SKSC/argocd-apps.git
+    #   targetRevision: main
+    #   path: global/nginx/overlays/dev
     
   destination:
     server: https://kubernetes.default.svc
