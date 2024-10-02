@@ -9,11 +9,20 @@ spec:
 
   sources:
     - repoURL: https://github.com/SKSC/argocd-apps.git
-      targetRevision: HEAD
+      targetRevision: test
       path: cloudcontrol/argocd/overlays/dev
     - repoURL: https://github.com/SKSC/argocd-apps.git
-      targetRevision: HEAD
+      targetRevision: test
       path: cloudcontrol/crossplane/overlays/dev
+    - repoURL: https://github.com/SKSC/argocd-apps.git
+      targetRevision: test
+      path: cloudcontrol/infra/
+      directory:
+        recurse: true
+    - repoURL: https://github.com/SKSC/argocd-apps.git
+      targetRevision: test
+      path: global/cert-manager/overlays/dev
+    
 
   destination:
     server: https://kubernetes.default.svc

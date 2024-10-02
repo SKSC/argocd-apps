@@ -2,12 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: cloudcontrol-applicationset
-  namespace: argocd
+  namespace: argocd-2119
 spec:
   generators:
     - git:
         repoURL: https://github.com/SKSC/argocd-apps.git
-        revision: main
+        revision: test
         directories:
           - path: cloudcontrol/argocd
           # - path: cloudcontrol/crossplane
@@ -19,11 +19,11 @@ spec:
       project: default
       source:
         repoURL: https://github.com/SKSC/argocd-apps.git
-        targetRevision: HEAD
-        path: overlays/dev
+        targetRevision: test
+        path: cloudcontrol/argocd/overlays/dev
       destination:
         server: https://kubernetes.default.svc
-        namespace: argocd
+        namespace: argocd-2119
       syncPolicy:
         automated:
           prune: true
