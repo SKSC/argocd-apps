@@ -9,6 +9,7 @@ spec:
   source:
     repoURL: https://github.com/SKSC/crossplane-install.git
     targetRevision: main
+    path: overlays/dev
 
   destination:
     server: https://kubernetes.default.svc
@@ -20,3 +21,5 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
+      - Prune=true

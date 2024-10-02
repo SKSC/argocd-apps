@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cloudcontrol-applicationset
+  namespace: argocd-2119
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/SKSC/argocd-apps.git
+        revision: test
+        directories:
+          - path: cloudcontrol/argocd
+          # - path: cloudcontrol/crossplane
+  template:
+    metadata:
+      # name: '{{path.basename}}'
+      name: argocd-xxxx
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/SKSC/argocd-apps.git
+        targetRevision: test
+        path: cloudcontrol/argocd/overlays/dev
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd-2119
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        retry:
+          limit: 5
+          backoff:
+            duration: "5s"
+            factor: 2
+            maxDuration: "3m"
+        syncOptions:
+          - CreateNamespace=true
+          - PruneLast=true
+          - ApplyOutOfSyncOnly=true
